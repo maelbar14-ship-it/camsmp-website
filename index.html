@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b100e">
+  <meta name="description" content="CamSMP — a public Minecraft Java survival server with an economy and Crystal PvP. Join the adventure!">
+  <title>CamSMP — Minecraft Server</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b100e; --panel: #111a15; --panel2: #17231b;
+      --text: #edf5ef; --muted: #9eafa3; --green: #62dc91;
+      --line: rgba(255,255,255,.09); --max: 1080px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: auto; }
+    header { border-bottom: 1px solid var(--line); background: rgba(11,16,14,.88); }
+    nav { min-height: 72px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { display:flex; align-items:center; gap:11px; font-weight:800; letter-spacing:.02em; }
+    .logo { display:grid; place-items:center; width:36px; height:36px; border-radius:11px; color:#07110b; background:var(--green); font-weight:950; }
+    .navlinks { display:flex; gap:24px; color:var(--muted); font-size:14px; }
+    .navlinks a:hover, footer a:hover { color:var(--green); }
+    .hero { padding:104px 0 82px; text-align:center; }
+    .eyebrow { display:inline-flex; align-items:center; gap:8px; padding:7px 12px; border:1px solid var(--line); border-radius:99px; color:#c7d7cc; font-size:13px; }
+    .dot { width:7px; height:7px; background:var(--green); border-radius:50%; box-shadow:0 0 12px var(--green); }
+    h1 { margin:23px 0 12px; font-size:clamp(48px, 9vw, 86px); line-height:1; letter-spacing:-.07em; }
+    h1 span { color:var(--green); }
+    .lead { max-width:590px; margin:0 auto; color:var(--muted); font-size:18px; }
+    .join { display:flex; align-items:center; gap:10px; width:min(510px,100%); margin:32px auto 0; padding:9px; background:var(--panel); border:1px solid var(--line); border-radius:15px; }
+    .ip { flex:1; min-width:0; text-align:left; padding-left:12px; }
+    .ip small { display:block; color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.12em; }
+    .ip strong { display:block; overflow-wrap:anywhere; font-size:15px; }
+    button { border:0; border-radius:10px; background:var(--green); color:#07110b; padding:12px 16px; font:700 14px inherit; cursor:pointer; transition:transform .15s,filter .15s; }
+    button:hover { filter:brightness(1.08); transform:translateY(-1px); }
+    .hint { min-height:22px; margin-top:9px; color:var(--muted); font-size:12px; }
+    .section { padding:68px 0; border-top:1px solid var(--line); }
+    .section-head { margin-bottom:26px; }
+    .kicker { color:var(--green); font-size:12px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
+    h2 { margin:7px 0 0; font-size:clamp(27px,4vw,38px); letter-spacing:-.04em; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .card { padding:23px; background:var(--panel); border:1px solid var(--line); border-radius:16px; }
+    .icon { display:grid; place-items:center; width:39px; height:39px; margin-bottom:18px; border-radius:12px; background:var(--panel2); color:var(--green); font-size:19px; }
+    .card h3 { margin:0 0 7px; font-size:18px; }
+    .card p { margin:0; color:var(--muted); font-size:14px; }
+    .info { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .info .card { display:flex; justify-content:space-between; align-items:center; gap:16px; }
+    .info strong { display:block; }
+    .info small { color:var(--muted); }
+    .pill { color:var(--green); background:rgba(98,220,145,.1); padding:5px 9px; border-radius:99px; font-size:12px; white-space:nowrap; }
+    .cta { text-align:center; padding:42px 24px; background:linear-gradient(135deg,#14251a,#101813); border:1px solid rgba(98,220,145,.18); border-radius:20px; }
+    .cta p { color:var(--muted); margin:8px 0 22px; }
+    footer { padding:28px 0; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
+    .foot { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    @media (max-width:700px) {
+      .navlinks { gap:13px; font-size:12px; }
+      .hero { padding:76px 0 62px; }
+      .grid { grid-template-columns:1fr; }
+      .info { grid-template-columns:1fr; }
+      .join { align-items:stretch; }
+      .ip strong { font-size:13px; }
+      button { padding:11px 12px; }
+    }
+    @media (max-width:420px) {
+      .navlinks a:nth-child(2) { display:none; }
+      .wrap { width:min(var(--max),calc(100% - 28px)); }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#"><span class="logo">C</span><span>CamSMP</span></a>
+    <div class="navlinks">
+      <a href="#features">Gameplay</a>
+      <a href="#info">Server Info</a>
+      <a href="#join">Join</a>
+    </div>
+  </nav>
+</header>
+<main>
+  <section class="hero wrap" id="join">
+    <div class="eyebrow"><span class="dot"></span> Minecraft Java Server</div>
+    <h1>CAM<span>SMP</span></h1>
+    <p class="lead">One world. One economy. Your own goals. Join CamSMP and write your story.</p>
+    <div class="join">
+      <div class="ip"><small>Server address</small><strong id="server-ip">expressing-forum.tun.ply.gg</strong></div>
+      <button id="copy-btn" type="button">Copy IP</button>
+    </div>
+    <div class="hint" id="copy-hint" aria-live="polite">Minecraft Java Edition · Connect using the address above</div>
+  </section>
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">The gameplay</div><h2>Your adventure starts here.</h2></div>
+      <div class="grid">
+        <article class="card"><div class="icon">⚔</div><h3>Crystal PvP</h3><p>Gear up, sharpen your skills and take on the challenge.</p></article>
+        <article class="card"><div class="icon">◆</div><h3>Economy</h3><p>Earn money, trade with other players and build your fortune.</p></article>
+        <article class="card"><div class="icon">⌂</div><h3>Survival</h3><p>Explore the world, build your base and progress at your own pace.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="info">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Server information</div><h2>Everything you need to know.</h2></div>
+      <div class="info">
+        <div class="card"><div><strong>Edition</strong><small>Minecraft Java</small></div><span class="pill">Java</span></div>
+        <div class="card"><div><strong>Version</strong><small>Server version</small></div><span class="pill">26.2</span></div>
+        <div class="card"><div><strong>Access</strong><small>Public server</small></div><span class="pill">No whitelist</span></div>
+        <div class="card"><div><strong>Community</strong><small>French & English</small></div><span class="pill">FR / EN</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap"><div class="cta">
+      <div class="kicker">Ready to play?</div><h2>See you in-game.</h2>
+      <p>Add the server address in Minecraft Java and join CamSMP.</p>
+      <button type="button" id="copy-btn-bottom">Copy server address</button>
+    </div></div>
+  </section>
+</main>
+<footer><div class="wrap foot"><span>© <span id="year"></span> CamSMP</span><span>An independent Minecraft server.</span></div></footer>
+<script>
+  const ip = "expressing-forum.tun.ply.gg";
+  const hint = document.getElementById("copy-hint");
+  async function copyIp() {
+    try {
+      await navigator.clipboard.writeText(ip);
+      hint.textContent = "Address copied! See you on CamSMP.";
+    } catch {
+      hint.textContent = "Automatic copy unavailable. Server address: " + ip;
+    }
+  }
+  document.getElementById("copy-btn").addEventListener("click", copyIp);
+  document.getElementById("copy-btn-bottom").addEventListener("click", copyIp);
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
